@@ -1,6 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_practice/core/exports/widget_exports.dart';
-import 'package:flutter_web_practice/core/widgets/builders/universal_grid_view.dart';
+import 'package:flutter_web_practice/features/home/home_exports.dart';
+
+const featureGridList = [
+  FeatureGridEntity(
+    icon: Icons.wifi,
+    title: "WiFi-Based Attendance Tracking",
+    desc:
+        "Track employee presence using office WiFi, no additional hardware needed.",
+  ),
+  FeatureGridEntity(
+    icon: Icons.person_2_rounded,
+    title: "Leave and WFH management",
+    desc:
+        "Employees can apply for leaves or WFH, with a tiered approval process.",
+  ),
+  FeatureGridEntity(
+    icon: Icons.calendar_month,
+    title: "Attendance viewing",
+    desc: "View attendance records for any custom period.",
+  ),
+  FeatureGridEntity(
+    icon: Icons.settings,
+    title: "Admin configuration",
+    desc: "Manage company structure nd employee with ease.",
+  ),
+  FeatureGridEntity(
+    icon: Icons.auto_graph_rounded,
+    title: "Advance features (Enterprise)",
+    desc: "HRMS integration, advance analytics and dedicated support",
+  ),
+];
 
 class HomeScreenWeb extends StatelessWidget {
   const HomeScreenWeb({super.key});
@@ -8,6 +38,7 @@ class HomeScreenWeb extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      key: key,
       child: Column(
         children: [
           Row(
@@ -48,16 +79,29 @@ class HomeScreenWeb extends StatelessWidget {
                   ],
                 ),
               ),
+              kGap20,
               Flexible(child: Image.asset(AppImages.websiteImg, scale: 2.9)),
-              kGap50,
-              UniversalGridView<String>(
-                items: [],
-                itemBuilder: (ctx, item, index) {
-                  return Container();
-                },
-              ),
             ],
-          ),
+          ).addPadding(padding: .symmetric(horizontal: 60)),
+          kGap50,
+          UniversalGridView<FeatureGridEntity>(
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 30,
+            mainAxisExtent: 160,
+            crossAxisCount: 3,
+
+            isInsideScrollview: true,
+            items: featureGridList,
+            itemBuilder: (ctx, item, index) {
+              return FeaturesGridTile(
+                icon: item.icon,
+                title: item.title,
+                desc: item.desc,
+              );
+            },
+          ).addPadding(padding: .symmetric(horizontal: 60)),
+          kGap50,
+          HomeAboutSection(),
         ],
       ),
     );

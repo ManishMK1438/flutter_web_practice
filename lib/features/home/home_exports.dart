@@ -1,3 +1,26 @@
+//domain
+export 'domain/entity/feature_grid_entity.dart';
+//presentation
+export 'presentation/widgets/features_grid_tile.dart';
+export 'presentation/widgets/home_about_section.dart';
 export 'presentation/widgets/home_screen_mobile.dart';
 export 'presentation/widgets/home_screen_tab.dart';
 export 'presentation/widgets/home_screen_web.dart';
+
+// features/home/home_exports.dart
+
+// 1. Export the main entry point
+//export 'presentation/screens/home_screen.dart';
+
+// 2. Export the Business Logic (Bloc/Cubit)
+//export 'presentation/logic/home_bloc.dart';
+
+// 3. Export Domain Entities (so other features can use the data types)
+//export 'domain/entities/home_data_entity.dart';
+
+// 4. Export the Repository Interface (for Dependency Injection)
+//export 'domain/repositories/home_repository.dart';
+
+// NOTE: We do NOT export the 'data/' folder.
+// Implementation details like 'home_repository_impl.dart' or 'home_api.dart'
+// should stay hidden inside the feature.

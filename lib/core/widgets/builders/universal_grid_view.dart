@@ -8,6 +8,8 @@ class UniversalGridView<T> extends StatelessWidget {
   final double childAspectRatio;
   final double crossAxisSpacing;
   final double mainAxisSpacing;
+  final bool isInsideScrollview;
+  final double? mainAxisExtent;
 
   const UniversalGridView({
     super.key,
@@ -17,12 +19,19 @@ class UniversalGridView<T> extends StatelessWidget {
     this.mainAxisSpacing = 10,
     this.crossAxisCount = 2,
     this.childAspectRatio = 1.0,
+    this.mainAxisExtent,
+    this.isInsideScrollview = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      shrinkWrap: isInsideScrollview,
+      physics: isInsideScrollview
+          ? const NeverScrollableScrollPhysics()
+          : const BouncingScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        mainAxisExtent: mainAxisExtent,
         crossAxisCount: crossAxisCount,
         childAspectRatio: childAspectRatio,
         crossAxisSpacing: crossAxisSpacing,

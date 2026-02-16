@@ -13,7 +13,7 @@ class AppButtonThemes {
           // Adaptive padding based on input method (Mouse vs Touch)
           padding: EdgeInsets.symmetric(
             vertical: PlatformInfo.isDesktopStyle ? 20.0 : kButtonPadding,
-            //horizontal: PlatformInfo.isDesktopStyle ? 24.0 : 16.0,
+            horizontal: PlatformInfo.isDesktopStyle ? 24.0 : kButtonPadding,
           ),
           foregroundColor: lightButtonForegroundColor,
           backgroundColor: lightButtonBackgroundColor,
