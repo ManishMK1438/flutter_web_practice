@@ -7,7 +7,7 @@ class HomeAboutSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: .all(60),
+      padding: PlatformInfo.isDesktop(context) ? .all(60) : .all(kAppPadding),
       color: kWhite,
       child: Row(
         children: [

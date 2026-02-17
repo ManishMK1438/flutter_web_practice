@@ -9,4 +9,5 @@ export 'package:flutter_web_practice/core/widgets/builders/universal_grid_view.d
 export 'package:flutter_web_practice/core/widgets/builders/universal_list_view.dart';
 export 'package:flutter_web_practice/core/widgets/buttons.dart';
 export 'package:flutter_web_practice/core/widgets/custom_app_bar.dart';
+export 'package:flutter_web_practice/core/widgets/custom_footer.dart';
 export 'package:flutter_web_practice/core/widgets/responsive_layout.dart';

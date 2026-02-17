@@ -6,6 +6,7 @@ export 'presentation/widgets/home_about_section.dart';
 export 'presentation/widgets/home_screen_mobile.dart';
 export 'presentation/widgets/home_screen_tab.dart';
 export 'presentation/widgets/home_screen_web.dart';
+export 'presentation/widgets/intro_column.dart';
 
 // features/home/home_exports.dart
 

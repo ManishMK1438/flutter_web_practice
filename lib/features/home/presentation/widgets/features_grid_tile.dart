@@ -40,7 +40,7 @@ class FeaturesGridTile extends StatelessWidget {
                   title,
                   style: TextStyle(fontWeight: .bold, fontSize: 20),
                   overflow: .ellipsis,
-                ),
+                ).textScale(),
                 kGap20,
                 Text(
                   desc,

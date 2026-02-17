@@ -15,6 +15,19 @@ extension UtilsGetter on BuildContext {
   double get bottomPadding => MediaQuery.of(this).viewInsets.bottom;
 }
 
+extension TextExtension on Text {
+  Widget textScale({double? width, BoxFit? fit, AlignmentGeometry? alignment}) {
+    return SizedBox(
+      width: width ?? double.infinity,
+      child: FittedBox(
+        alignment: alignment ?? .centerLeft,
+        fit: fit ?? BoxFit.scaleDown,
+        child: this,
+      ),
+    );
+  }
+}
+
 extension WidgetExtensions on Widget {
   Widget addPadding({EdgeInsets? padding}) {
     return Padding(
