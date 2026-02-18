@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_practice/core/exports/packages_exports.dart';
 import 'package:flutter_web_practice/core/exports/widget_exports.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -23,24 +24,36 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actions,
   });
 
+  ButtonStyle _buttonStyle({
+    required BuildContext context,
+    required String path,
+  }) {
+    return TextButton.styleFrom(
+      // Check our helper to decide the color
+      backgroundColor: HelperFunctions.isRouteActive(context, path)
+          ? textButtonOverlayColor
+          : Colors.transparent, // Explicitly set transparent if not active
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return ResponsiveLayout(
       // MOBILE: Shows the Drawer Menu Icon
       mobile: AppBar(
         backgroundColor: primaryColor,
-        title: Text(title),
+        title: Text(title, style: TextStyle(color: kWhite)),
         // Flutter automatically shows the drawer icon if a Scaffold has a drawer
         leading: Builder(
           builder: (newContext) => IconButton(
-            icon: const Icon(Icons.menu),
+            icon: const Icon(Icons.menu, color: kWhite),
             onPressed: () => Scaffold.of(newContext).openDrawer(),
           ),
         ),
         actions: [
           SizedBox(
             width: 100,
-            child: PrimaryButton(text: "Login", onTap: () {}),
+            child: PrimaryButton(text: AppStrings.login, onTap: () {}),
           ),
           kGap10,
         ],
@@ -55,17 +68,34 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const FlutterLogo(size: 50),
-
             Row(
               children: [
-                TextButton(onPressed: () {}, child: Text("Home")),
-                TextButton(onPressed: () {}, child: Text("Features")),
-                TextButton(onPressed: () {}, child: Text("Pricing")),
-                TextButton(onPressed: () {}, child: Text("Blog")),
-                TextButton(onPressed: () {}, child: Text("About us")),
-                TextButton(onPressed: () {}, child: Text("Contact us")),
-                TextButton(onPressed: () {}, child: Text("Policies")),
-                TextButton(onPressed: () {}, child: Text("FAQ")),
+                TextButton(
+                  onPressed: () {
+                    context.goNamed(AppRouteName.home);
+                  },
+                  style: _buttonStyle(
+                    context: context,
+                    path: AppRoutePath.home,
+                  ),
+                  child: Text(AppStrings.home),
+                ),
+                TextButton(
+                  onPressed: () {
+                    context.goNamed(AppRouteName.features);
+                  },
+                  style: _buttonStyle(
+                    context: context,
+                    path: AppRoutePath.features,
+                  ),
+                  child: Text(AppStrings.features),
+                ),
+                TextButton(onPressed: () {}, child: Text(AppStrings.pricing)),
+                TextButton(onPressed: () {}, child: Text(AppStrings.blog)),
+                TextButton(onPressed: () {}, child: Text(AppStrings.aboutUs)),
+                TextButton(onPressed: () {}, child: Text(AppStrings.contactUs)),
+                TextButton(onPressed: () {}, child: Text(AppStrings.policies)),
+                TextButton(onPressed: () {}, child: Text(AppStrings.faq)),
               ],
             ),
 

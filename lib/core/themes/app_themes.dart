@@ -34,8 +34,8 @@ class AppThemes {
     //textTheme: AppTextTheme.lightTextTheme,
     textButtonTheme: const TextButtonThemeData(
       style: ButtonStyle(
-        foregroundColor: WidgetStatePropertyAll<Color>(textButtonOverlayColor),
-        overlayColor: WidgetStatePropertyAll<Color>(Colors.white30),
+        foregroundColor: WidgetStatePropertyAll<Color>(kWhite),
+        overlayColor: WidgetStatePropertyAll<Color>(textButtonOverlayColor),
       ),
     ),
     elevatedButtonTheme: AppButtonThemes.lightElevatedButtonTheme,
@@ -45,6 +45,12 @@ class AppThemes {
       elevation: 0,
     ),*/
     listTileTheme: ListTileThemeData(
+      tileColor: WidgetStateColor.resolveWith((states) {
+        if (states.contains(WidgetState.hovered)) {
+          return primaryColor.withValues(alpha: 0.5); // Hover color
+        }
+        return Colors.transparent; // Default color
+      }),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
     ),
     inputDecorationTheme: InputDecorationTheme(

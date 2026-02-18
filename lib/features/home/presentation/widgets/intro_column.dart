@@ -8,9 +8,11 @@ class IntroColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: .center,
+      crossAxisAlignment: .start,
       children: [
         Text(
           AppStrings.simplify,
+          textAlign: .start,
           style: TextStyle(fontWeight: .w800, fontSize: 40),
         ),
         kGap15,

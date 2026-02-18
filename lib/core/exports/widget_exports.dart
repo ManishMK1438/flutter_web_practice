@@ -1,5 +1,7 @@
 export 'package:flutter_web_practice/core/extensions/extensions.dart';
+export 'package:flutter_web_practice/core/functions/helper_functions.dart';
 export 'package:flutter_web_practice/core/functions/platform_info.dart';
+export 'package:flutter_web_practice/core/routes/routes.dart';
 export 'package:flutter_web_practice/core/themes/app_themes.dart';
 export 'package:flutter_web_practice/core/utils/colors.dart';
 export 'package:flutter_web_practice/core/utils/constants.dart';
@@ -10,4 +12,5 @@ export 'package:flutter_web_practice/core/widgets/builders/universal_list_view.d
 export 'package:flutter_web_practice/core/widgets/buttons.dart';
 export 'package:flutter_web_practice/core/widgets/custom_app_bar.dart';
 export 'package:flutter_web_practice/core/widgets/custom_footer.dart';
+export 'package:flutter_web_practice/core/widgets/main_layout_wrapper.dart';
 export 'package:flutter_web_practice/core/widgets/responsive_layout.dart';

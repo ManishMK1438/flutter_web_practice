@@ -29,9 +29,27 @@ class AppStrings {
   static const copyrightText = "© Copyright CLOCKtales All Rights Reserved";
   static const designAndDeveloped =
       "Designed and Developed by Goolean Technologies Pvt. Ltd.";
+  static const login = "Login";
+  static const pricing = "Pricing";
+  static const blog = "Blog";
+  static const policies = "Policies";
+  static const faq = "FAQ";
 }
 
 class AppImages {
+  AppImages._();
   static const websiteImg = "assets/images/website_img.png";
   static const aboutUs = "assets/images/about_us.png";
+}
+
+class AppRoutePath {
+  AppRoutePath._();
+  static const String home = '/';
+  static const String features = '/features';
+}
+
+class AppRouteName {
+  AppRouteName._();
+  static const String home = 'home';
+  static const String features = 'features';
 }

@@ -1,5 +1,6 @@
 //domain
 export 'domain/entity/feature_grid_entity.dart';
+export 'presentation/widgets/custom_drawer.dart';
 //presentation
 export 'presentation/widgets/features_grid_tile.dart';
 export 'presentation/widgets/home_about_section.dart';

@@ -58,16 +58,31 @@ class CustomFooter extends StatelessWidget {
   }
 
   Widget _buildUsefulLinks() {
-    return const Column(
+    return Column(
       crossAxisAlignment: .start,
       mainAxisAlignment: .start,
       children: [
-        Text(
+        const Text(
           AppStrings.usefulLinks,
           style: TextStyle(fontWeight: .w700, color: kWhite, fontSize: 16),
-        ),
+        ).addPadding(padding: .only(left: 8)),
         kGap20,
-        Text(AppStrings.home, style: TextStyle(color: kWhite, fontSize: 14)),
+        TextButton(onPressed: () {}, child: const Text(AppStrings.home)),
+        kGap10,
+        TextButton(onPressed: () {}, child: const Text(AppStrings.aboutUs)),
+        kGap10,
+        TextButton(onPressed: () {}, child: const Text(AppStrings.features)),
+        kGap10,
+        TextButton(
+          onPressed: () {},
+          child: const Text(AppStrings.termsAndConditions),
+        ),
+        kGap10,
+        TextButton(
+          onPressed: () {},
+          child: const Text(AppStrings.privacyPolicy),
+        ),
+        /*Text(AppStrings.home, style: TextStyle(color: kWhite, fontSize: 14)),
         kGap20,
         Text(AppStrings.aboutUs, style: TextStyle(color: kWhite, fontSize: 14)),
         kGap20,
@@ -85,45 +100,63 @@ class CustomFooter extends StatelessWidget {
           AppStrings.privacyPolicy,
           style: TextStyle(color: kWhite, fontSize: 14),
         ),
-        kGap20,
+        kGap20,*/
       ],
     );
   }
 
   Widget _buildServices() {
-    return const Column(
+    return Column(
       crossAxisAlignment: .start,
       mainAxisAlignment: .start,
       children: [
-        Text(
+        const Text(
           AppStrings.ourServices,
           style: TextStyle(fontWeight: .w700, color: kWhite, fontSize: 16),
-        ),
+        ).addPadding(padding: .only(left: 8)),
         kGap20,
-        Text(
+        TextButton(onPressed: () {}, child: const Text(AppStrings.webDesign)),
+        kGap10,
+        TextButton(
+          onPressed: () {},
+          child: const Text(AppStrings.webDevelopment),
+        ),
+        kGap10,
+        TextButton(
+          onPressed: () {},
+          child: const Text(AppStrings.appDevelopment),
+        ),
+        kGap10,
+        TextButton(onPressed: () {}, child: const Text(AppStrings.marketing)),
+        kGap10,
+        TextButton(
+          onPressed: () {},
+          child: const Text(AppStrings.graphicDesign),
+        ),
+        /* const Text(
           AppStrings.webDesign,
           style: TextStyle(color: kWhite, fontSize: 14),
         ),
         kGap20,
-        Text(
+        const Text(
           AppStrings.webDevelopment,
           style: TextStyle(color: kWhite, fontSize: 14),
         ),
         kGap20,
-        Text(
+        const Text(
           AppStrings.appDevelopment,
           style: TextStyle(color: kWhite, fontSize: 14),
         ),
         kGap20,
-        Text(
+        const Text(
           AppStrings.marketing,
           style: TextStyle(color: kWhite, fontSize: 14),
         ),
         kGap20,
-        Text(
+        const Text(
           AppStrings.graphicDesign,
           style: TextStyle(color: kWhite, fontSize: 14),
-        ),
+        ),*/
       ],
     );
   }

@@ -12,9 +12,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryColor.withValues(alpha: 0.05),
-      drawer: Drawer(),
-      appBar: CustomAppBar(title: "CLOCKTales"),
       body: PageStorage(
         bucket: _homeBucket,
         child: ResponsiveLayout(
